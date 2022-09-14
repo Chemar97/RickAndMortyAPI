@@ -14,8 +14,8 @@ const ResidentsComponent = ({resident}) => {
     // console.log(character)
 
     return (
-        <div className='card'>
-            <li>
+        <li className='resident'>
+            <div className='resident-card'>
                 <h3 className='name'>{character?.name}</h3>
                 <br />
                 <img className='character' src={character?.image} alt="" />
@@ -25,10 +25,9 @@ const ResidentsComponent = ({resident}) => {
                 <p className='cardInfo'><b>Origin: </b>{character?.origin.name}</p>
                 <br />
                 <p className='cardInfo'><b># Episodes: </b>{character?.episode.length}</p>
-
-            </li>
+            </div>
             <br />
-        </div>
+        </li>
     );
 };
 

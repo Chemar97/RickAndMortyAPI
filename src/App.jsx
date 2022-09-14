@@ -24,10 +24,12 @@ function App() {
 
   return (
     <div className="App">
-
+      <header className='rm-banner'>
+          <img className='rm-gif' src="https://i.gifer.com/XMeq.gif" alt="" />
+      </header>
       
       <label htmlFor="buttonID"><input 
-        className='searchBox'
+        className='search-box'
         type="text"
         placeholder='Incert location ID'
         value={typeId}
@@ -35,15 +37,15 @@ function App() {
       /><i className="fa-solid fa-magnifying-glass"></i></label>
       <button id='buttonID' className='searchButton' onClick={searchType}></button>
       
-      <section className='locationInfo'>
-        <h1>{location.name}</h1>
+      <section className='location-info'>
+        <h2>{location.name}</h2>
         <p><b>Type: </b>{location.type}</p>
         <p><b>dimension: </b>{location.dimension}</p>
         <p><b>Population: </b>{location.residents?.length}</p>
       </section>
 
-      <ul>
-      {location.residents?.map(resident => (
+      <ul className='residentContainer'>
+        {location.residents?.map(resident => (
         <ResidentsComponent resident={resident} key={resident}/>
       ) )}
       </ul>
